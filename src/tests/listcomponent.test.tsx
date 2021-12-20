@@ -11,4 +11,9 @@ describe('Test for text: <ListComponent/>', () => {
     const wrapper = shallow(<ListComponent />);
     expect(wrapper.exists()).toBe(true);
   });
+  it('should have a length of 10 seeded list items', async () => {
+    const wrapper = mount(<ListComponent />);
+    // await wrapper.instance().componentDidMount();
+    expect(wrapper.find('li').length).toBe(10);
+  });
 });
