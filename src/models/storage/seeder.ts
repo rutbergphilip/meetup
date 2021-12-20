@@ -1,3 +1,4 @@
+import { IEvent } from './../../interfaces/event.interface';
 import { idGenerator } from './../../utils/misc.utils';
 import { User } from '../../interfaces/user.interface';
 import events from './events.storage';
@@ -11,7 +12,7 @@ import * as faker from 'faker';
       name: faker.name.findName(),
     };
 
-    const meetup: Event = new Event(
+    const meetup: IEvent = new Event(
       faker.name.title(),
       faker.lorem.paragraph(Math.floor(Math.random() * 3) + 1),
       user
