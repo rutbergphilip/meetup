@@ -1,4 +1,6 @@
-export const idGenerator = () => {
+import { Snowflake } from '../types/snowflake.type';
+
+export const idGenerator = (): Snowflake => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
 

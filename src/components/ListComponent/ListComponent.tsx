@@ -1,6 +1,7 @@
 import React from 'react';
 import events from '../../models/storage/events.storage';
 import { ListItem } from './ListItem/ListItem';
+import styles from './ListComponent.module.css';
 
 export const ListComponent = () => {
   const list = [];
@@ -20,7 +21,7 @@ export const ListComponent = () => {
   }
 
   return (
-    <div className='wrapper'>
+    <div className={styles['wrapper']}>
       <ul className='meetup-list'>{list}</ul>
     </div>
   );

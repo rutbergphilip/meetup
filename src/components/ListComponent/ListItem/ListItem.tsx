@@ -8,11 +8,15 @@ export const ListItem = ({
   organizer,
 }: IEventCard) => {
   return (
-    <li className='meetup-list-item' style={styles}>
-      <h1>{title}</h1>
-      <p>{description}</p>
-      {organizer ? <h3>Organizer: {organizer}</h3> : ''}
-      <p>{date.toLocaleDateString()}</p>
+    <li>
+      <div className={styles['listItem']}>
+        <div className={styles['meetupInfo']}>
+          <h1 className={styles['title']}>{title}</h1>
+          <p className={styles['description']}>{description}</p>
+          <p className={styles['date']}>{date.toLocaleDateString()}</p>
+        </div>
+        {organizer ? <h3 className='organizer'>Organizer: {organizer}</h3> : ''}
+      </div>
     </li>
   );
 };

@@ -2,10 +2,11 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  max-width: 60vw;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 li {
@@ -13,7 +14,21 @@ li {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem;
-  border-bottom: 1px solid #ccc;
-  max-width: 100vw;
-  min-width: 80vw;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  text-align: left;
+}
+
+.listItem {
+}
+
+.meetupInfo {
+  word-wrap: break-word;
+  width: 50vw;
+  text-align: left;
+}
+
+.description {
+  max-width: 350px;
 }
