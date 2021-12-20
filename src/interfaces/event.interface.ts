@@ -7,5 +7,6 @@ export interface IEvent {
   description?: string;
   date: Date;
   organizer?: User;
-  comments?: Comment[];
+  comments: Comment[];
+  signups: User[];
 }
