@@ -1,13 +1,13 @@
 import { Comment } from '../interfaces/comment.interface';
 import { IEvent } from '../interfaces/event.interface';
 import { User } from '../interfaces/user.interface';
-import { getDate, idGenerator } from '../utils/misc.utils';
+import { getRandomDates, idGenerator } from '../utils/misc.utils';
 
 class Event implements IEvent {
   readonly id = idGenerator();
   public title;
   public description;
-  readonly date = getDate();
+  readonly date = getRandomDates();
   public organizer;
   comments: Comment[] = [];
   signups: User[] = [];
