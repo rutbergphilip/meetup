@@ -1,4 +1,3 @@
-import { IEvent } from '../../../interfaces/event.interface';
 import { IEventCard } from '../../../interfaces/eventcomponent.interface';
 import styles from './ListItem.module.css';
 
