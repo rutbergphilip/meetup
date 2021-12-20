@@ -3,8 +3,6 @@ import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { ListComponent } from '../components/ListComponent/ListComponent';
 import { seeder } from '../models/storage/seeder.storage';
-import { screen } from '@testing-library/react';
-import events from '../models/storage/events.storage';
 
 Enzyme.configure({ adapter: new Adapter() });
 beforeAll(() => {
