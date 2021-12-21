@@ -4,7 +4,7 @@ export const idGenerator = (): Snowflake => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
 
-export const getRandomDates = () => {
+export const getRandomDates = (): Date => {
   const start = new Date(2022, 12, 1);
   const end = new Date();
   return new Date(

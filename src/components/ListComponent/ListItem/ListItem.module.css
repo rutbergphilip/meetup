@@ -17,10 +17,19 @@ li {
   margin: 1rem;
   border: 1px solid #ccc;
   border-radius: 25px;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .listItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.meetupHandlers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .meetupInfo {

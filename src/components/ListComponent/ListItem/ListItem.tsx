@@ -1,7 +1,9 @@
+import React from 'react';
 import { IEventCard } from '../../../interfaces/eventcomponent.interface';
 import styles from './ListItem.module.css';
 
 export const ListItem = ({
+  id,
   title,
   description,
   date,
@@ -15,7 +17,16 @@ export const ListItem = ({
           <p className={styles['description']}>{description}</p>
           <p className={styles['date']}>{date.toLocaleDateString()}</p>
         </div>
-        {organizer ? <h3 className='organizer'>Organizer: {organizer}</h3> : ''}
+        <div className={styles['meetupHandlers']}>
+          {organizer ? (
+            <h3 className='organizer'>Organizer: {organizer}</h3>
+          ) : (
+            ''
+          )}
+          <button className='signup' aria-label='signup-button'>
+            Sign up!
+          </button>
+        </div>
       </div>
     </li>
   );
