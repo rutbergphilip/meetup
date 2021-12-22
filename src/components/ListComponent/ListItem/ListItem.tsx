@@ -1,5 +1,6 @@
 import React from 'react';
 import { IEventCard } from '../../../interfaces/eventcomponent.interface';
+import events from '../../../models/storage/events.storage';
 import styles from './ListItem.module.css';
 
 export const ListItem = ({
@@ -9,6 +10,12 @@ export const ListItem = ({
   date,
   organizer,
 }: IEventCard) => {
+  const event = events.get(id);
+
+  const signup = () => {
+    console.log(organizer);
+  };
+
   return (
     <li>
       <div className={styles['listItem']}>
@@ -25,7 +32,11 @@ export const ListItem = ({
           ) : (
             ''
           )}
-          <button className='signup' aria-label='signup-button'>
+          <button
+            className='signup'
+            aria-label='signup-button'
+            onClick={signup}
+          >
             Sign up!
           </button>
         </div>

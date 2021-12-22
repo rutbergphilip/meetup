@@ -18,11 +18,11 @@ class Event implements IEvent {
     this.organizer = organizer;
   }
 
-  public addComment(comment: Comment) {
+  addComment(comment: Comment) {
     this.comments.push(comment);
   }
 
-  public addSignup(user: User) {
+  addSignup(user: User) {
     this.signups.push(user);
   }
 }

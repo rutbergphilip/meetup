@@ -12,7 +12,7 @@ export const seeder = () => {
       name: faker.name.findName(),
     };
 
-    const meetup: IEvent = new Event(
+    const meetup: Event = new Event(
       faker.name.title(),
       faker.lorem.paragraph(1),
       user
