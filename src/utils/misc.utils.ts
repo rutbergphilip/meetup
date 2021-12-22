@@ -11,3 +11,7 @@ export const getRandomDates = (): Date => {
     start.getTime() + Math.random() * (end.getTime() - start.getTime())
   );
 };
+
+export const sortByAscending = (array: Array<any>): Array<any> => {
+  return array.sort((a: any, b: any) => a - b);
+};
