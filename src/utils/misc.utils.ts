@@ -1,4 +1,3 @@
-import { IEventCard } from './../interfaces/eventcomponent.interface';
 import { Snowflake } from '../types/snowflake.type';
 
 export const idGenerator = (): Snowflake => {

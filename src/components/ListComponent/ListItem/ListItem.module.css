@@ -4,9 +4,6 @@ ul {
   margin: 0;
   position: absolute;
   max-width: 60vw;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
 }
 
 li {
@@ -17,7 +14,6 @@ li {
   margin: 1rem;
   border: 1px solid #ccc;
   border-radius: 25px;
-  /* text-align: left; */
 }
 
 .listItem {
