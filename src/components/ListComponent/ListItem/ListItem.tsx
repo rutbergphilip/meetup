@@ -1,6 +1,6 @@
 import React from 'react';
 import { IEventCard } from '../../../interfaces/eventcomponent.interface';
-import events from '../../../models/storage/events.storage';
+import events from '../../../database/events.database';
 import styles from './ListItem.module.css';
 
 export const ListItem = ({
@@ -10,10 +10,9 @@ export const ListItem = ({
   date,
   organizer,
 }: IEventCard) => {
-  const event = events.get(id);
-
-  const signup = () => {
-    console.log(organizer);
+  const signup = (e: MouseEvent) => {
+    e.preventDefault();
+    console.log(events.get(id));
   };
 
   return (
@@ -35,7 +34,10 @@ export const ListItem = ({
           <button
             className='signup'
             aria-label='signup-button'
-            onClick={signup}
+            // @ts-ignore
+            onClick={(e: MouseEvent) => {
+              signup(e);
+            }}
           >
             Sign up!
           </button>

@@ -2,7 +2,7 @@ import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { ListComponent } from '../components/ListComponent/ListComponent';
-import { seeder } from '../models/storage/seeder.storage';
+import { seeder } from '../database/seeder.database';
 import { findByText, getByText, render, screen } from '@testing-library/react';
 
 Enzyme.configure({ adapter: new Adapter() });

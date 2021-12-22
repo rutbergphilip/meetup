@@ -1,8 +1,8 @@
-import { IEvent } from '../../interfaces/event.interface';
-import { idGenerator } from '../../utils/misc.utils';
-import { User } from '../../interfaces/user.interface';
-import events from './events.storage';
-import Event from '../event';
+import { IEvent } from '../interfaces/event.interface';
+import { idGenerator } from '../utils/misc.utils';
+import { User } from '../interfaces/user.interface';
+import events from './events.database';
+import Event from '../models/event';
 import * as faker from 'faker';
 
 export const seeder = () => {
@@ -18,6 +18,6 @@ export const seeder = () => {
       user
     );
 
-    events.set(`event-${index}-${idGenerator()}`, meetup);
+    events.set(meetup.id, meetup);
   }
 };

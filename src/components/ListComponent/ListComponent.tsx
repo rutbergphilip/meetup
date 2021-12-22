@@ -1,5 +1,5 @@
 import React from 'react';
-import events from '../../models/storage/events.storage';
+import events from '../../database/events.database';
 import { ListItem } from './ListItem/ListItem';
 import styles from './ListComponent.module.css';
 import { sortDateByAscending } from '../../utils/misc.utils';
