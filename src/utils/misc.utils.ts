@@ -1,3 +1,4 @@
+import { IEventCard } from './../interfaces/eventcomponent.interface';
 import { Snowflake } from '../types/snowflake.type';
 
 export const idGenerator = (): Snowflake => {
@@ -12,6 +13,8 @@ export const getRandomDates = (): Date => {
   );
 };
 
-export const sortByAscending = (array: Array<any>): Array<any> => {
-  return array.sort((a: any, b: any) => a - b);
+export const sortDateByAscending = (array: JSX.Element[]): JSX.Element[] => {
+  return array.sort(
+    (a: JSX.Element, b: JSX.Element) => a.props.date - b.props.date
+  );
 };

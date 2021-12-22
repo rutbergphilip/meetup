@@ -2,9 +2,10 @@ import React from 'react';
 import events from '../../models/storage/events.storage';
 import { ListItem } from './ListItem/ListItem';
 import styles from './ListComponent.module.css';
+import { sortDateByAscending } from '../../utils/misc.utils';
 
 export const ListComponent = () => {
-  const list = [];
+  const list: JSX.Element[] = [];
   for (const [key, value] of events.entries()) {
     list.push(
       <ListItem
@@ -22,7 +23,7 @@ export const ListComponent = () => {
 
   return (
     <div className={styles['wrapper']}>
-      <ul className='meetup-list'>{list}</ul>
+      <ul className='meetup-list'>{sortDateByAscending(list)}</ul>
     </div>
   );
 };
