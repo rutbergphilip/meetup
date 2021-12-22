@@ -15,7 +15,9 @@ export const ListItem = ({
         <div className={styles['meetupInfo']}>
           <h1 className={styles['title']}>{title}</h1>
           <p className={styles['description']}>{description}</p>
-          <p className={styles['date']}>{date.toLocaleDateString()}</p>
+          <p className={styles['date']} aria-label='date'>
+            {date.toLocaleDateString()}
+          </p>
         </div>
         <div className={styles['meetupHandlers']}>
           {organizer ? (

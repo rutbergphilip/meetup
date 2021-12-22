@@ -31,15 +31,18 @@ describe('Test for <ListComponent/>', () => {
     const titles = screen.getAllByRole('heading', { name: /\s\S/gi });
     expect(titles).toBeTruthy();
   });
-  //   it('should have dates in chronological order', async () => {
-  //     const wrapper = shallow(<ListComponent />);
-  //     const dates = wrapper.find('ListItem').map((item) => item.prop('date'));
-  //     expect(dates).toEqual(
-  //       expect.arrayContaining([
-  //         expect.objectContaining({
-  //           getTime: expect.any(Function),
-  //         }),
-  //       ])
-  //     );
-  //   });
+  it('should be in chronological order', async () => {
+    render(<ListComponent />);
+    const dates = screen.getAllByText(/\d\d\d\d-\d\d-\d\d/i);
+    const dateValues = dates.map(
+      (date) => new Date(date.textContent as string)
+    );
+    const isSorted = (array: Date[]) =>
+      array.every(
+        (_, index: number) =>
+          index === array.length - 1 || array[index] < array[index + 1]
+      );
+
+    expect(isSorted(dateValues)).toBe(true);
+  });
 });
