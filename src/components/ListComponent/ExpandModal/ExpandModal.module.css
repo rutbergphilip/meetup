@@ -1,0 +1,62 @@
+.modal > p {
+  margin: 1rem;
+  color: blue;
+  cursor: pointer;
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.event-comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}
+
+.comments {
+  border: 1px solid black;
+  height: 250px;
+  overflow: auto;
+}
+
+.comments-wrapper {
+  border: 1px solid black;
+  width: 500px;
+  height: 300px;
+}
+
+.send-message-input {
+  border: 1px solid black;
+  height: 20px;
+  width: 300px;
+}
+
+.send-message-button {
+  height: 20px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.new-message {
+  display: flex;
+  margin: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
+}

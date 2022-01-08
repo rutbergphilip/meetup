@@ -1,9 +1,10 @@
 import React from 'react';
-import Enzyme, { mount, shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { ListComponent } from '../components/ListComponent/ListComponent';
 import { seeder } from '../database/seeder.database';
-import { findByText, getByText, render, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { isDateSortedByAscending } from '../utils/misc.utils';
 
 Enzyme.configure({ adapter: new Adapter() });
 beforeAll(() => {
@@ -37,12 +38,7 @@ describe('Test for <ListComponent/>', () => {
     const dateValues = dates.map(
       (date) => new Date(date.textContent as string)
     );
-    const isSorted = (array: Date[]) =>
-      array.every(
-        (_, index: number) =>
-          index === array.length - 1 || array[index] < array[index + 1]
-      );
 
-    expect(isSorted(dateValues)).toBe(true);
+    expect(isDateSortedByAscending(dateValues)).toBe(true);
   });
 });

@@ -37,3 +37,10 @@ li {
 .description {
   max-width: 350px;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

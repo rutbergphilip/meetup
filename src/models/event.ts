@@ -18,12 +18,43 @@ class Event implements IEvent {
     this.organizer = organizer;
   }
 
-  addComment(comment: Comment) {
+  addComment(text: string, author: User) {
+    const id = idGenerator();
+    const date = new Date()
+      .toLocaleString('en-SE', {
+        timeZone: 'Europe/Stockholm',
+      })
+      .replace(',', '');
+
+    const comment: Comment = {
+      id,
+      text,
+      date,
+      author,
+    };
+
     this.comments.push(comment);
+    return comment;
   }
 
   addSignup(user: User) {
-    this.signups.push(user);
+    if (!this.signups.includes(user)) {
+      this.signups.push(user);
+    }
+  }
+
+  removeSignup(user: User) {
+    if (this.signups.includes(user)) {
+      this.signups.splice(this.signups.indexOf(user));
+    }
+  }
+
+  isSignedUp(user: User) {
+    return this.signups.some((usr) => usr.id === user.id);
+  }
+
+  hasCommented(user: User) {
+    return this.comments.some((comment) => comment.author.id === user.id);
   }
 }
 

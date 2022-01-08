@@ -1,3 +1,4 @@
+import { User } from './../interfaces/user.interface';
 import { Snowflake } from '../types/snowflake.type';
 
 export const idGenerator = (): Snowflake => {
@@ -16,4 +17,18 @@ export const sortDateByAscending = (array: JSX.Element[]): JSX.Element[] => {
   return array.sort(
     (a: JSX.Element, b: JSX.Element) => a.props.date - b.props.date
   );
+};
+
+export const isDateSortedByAscending = (array: Date[]) =>
+  array.every(
+    (_, index: number) =>
+      index === array.length - 1 || array[index] <= array[index + 1]
+  );
+
+export const getActiveUser = (): User => {
+  return JSON.parse(localStorage.getItem('user') || '{}') as User;
+};
+
+export const setActiveUser = (user: User): void => {
+  localStorage.setItem('user', JSON.stringify(user));
 };
