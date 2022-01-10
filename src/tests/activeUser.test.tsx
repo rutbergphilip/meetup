@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { ActiveUser } from '../components/ActiveUserComponent/ActiveUserComponent';
+import { ActiveUser } from '../components/ActiveUser/ActiveUser';
 import { seeder } from '../database/seeder.database';
 
 Enzyme.configure({ adapter: new Adapter() });

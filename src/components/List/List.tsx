@@ -1,10 +1,10 @@
 import React from 'react';
 import events from '../../database/events.database';
 import { ListItem } from './ListItem/ListItem';
-import styles from './ListComponent.module.css';
+import styles from './List.module.css';
 import { sortDateByAscending } from '../../utils/misc.utils';
 
-export const ListComponent = () => {
+export const List = () => {
   const list: JSX.Element[] = [];
   for (const [key, value] of events.entries()) {
     list.push(

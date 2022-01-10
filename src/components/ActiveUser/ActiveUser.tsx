@@ -1,6 +1,6 @@
 import React from 'react';
 import { User } from '../../interfaces/user.interface';
-import styles from './ActiveUserComponent.module.css';
+import styles from './ActiveUser.module.css';
 
 export const ActiveUser = () => {
   const activeUser: User = JSON.parse(localStorage.getItem('user') || '{}');

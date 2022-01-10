@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { ActiveUser } from './components/ActiveUserComponent/ActiveUserComponent';
-import { ListComponent } from './components/ListComponent/ListComponent';
+import { ActiveUser } from './components/ActiveUser/ActiveUser';
+import { List } from './components/List/List';
 import { seeder } from './database/seeder.database';
 
 seeder();
@@ -9,7 +9,7 @@ seeder();
 function App() {
   return (
     <div className='App'>
-      <ListComponent />
+      <List />
       <ActiveUser />
     </div>
   );

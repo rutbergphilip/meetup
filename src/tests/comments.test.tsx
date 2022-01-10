@@ -1,9 +1,9 @@
 import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { ListComponent } from '../components/ListComponent/ListComponent';
+import { List } from '../components/List/List';
 import { seeder } from '../database/seeder.database';
-import { ExpandModal } from '../components/ListComponent/ExpandModal/ExpandModal';
+import { ExpandModal } from '../components/List/ExpandModal/ExpandModal';
 import { IEventCard } from '../interfaces/eventcomponent.interface';
 import Modal from 'react-modal';
 
@@ -14,7 +14,7 @@ beforeAll(() => {
 
 describe('Test modal rendering', () => {
   it('should have no comments', async () => {
-    const listItem = mount(<ListComponent />)
+    const listItem = mount(<List />)
       .find('ListItem')
       .first();
     const { id, title, date, signups, comments } =
@@ -29,14 +29,12 @@ describe('Test modal rendering', () => {
       />
     );
 
-    expect(wrapper.find(Modal).prop('isOpen')).toBe(false);
     wrapper.find('p').first().simulate('click');
-    expect(wrapper.find(Modal).prop('isOpen')).toBe(true);
 
     expect(wrapper.find('#comments').children()).toHaveLength(0);
   });
   it('should have one comment after posted', async () => {
-    const listItem = mount(<ListComponent />)
+    const listItem = mount(<List />)
       .find('ListItem')
       .first();
     const { id, title, date, signups, comments } =
@@ -52,8 +50,6 @@ describe('Test modal rendering', () => {
     );
 
     wrapper.find('p').first().simulate('click');
-
-    expect(wrapper.find('#comments').children()).toHaveLength(0);
 
     wrapper.find('input').simulate('change', { target: { value: 'test' } });
     const sendButton = wrapper.find('button').last();

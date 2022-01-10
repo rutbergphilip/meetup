@@ -1,9 +1,9 @@
 import React from 'react';
 import Enzyme, { mount, shallow } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-import { ListComponent } from '../components/ListComponent/ListComponent';
+import { List } from '../components/List/List';
 import { seeder } from '../database/seeder.database';
-import { ExpandModal } from '../components/ListComponent/ExpandModal/ExpandModal';
+import { ExpandModal } from '../components/List/ExpandModal/ExpandModal';
 import { IEventCard } from '../interfaces/eventcomponent.interface';
 import Modal from 'react-modal';
 
@@ -14,7 +14,7 @@ beforeAll(() => {
 
 describe('Test modal rendering', () => {
   it('should exist', async () => {
-    const listItem = mount(<ListComponent />)
+    const listItem = mount(<List />)
       .find('ListItem')
       .first();
     const { id, title, date, signups, comments } =
@@ -31,7 +31,7 @@ describe('Test modal rendering', () => {
     expect(wrapper.find(Modal)).toHaveLength(1);
   });
   it('should open when link is clicked', async () => {
-    const listItem = mount(<ListComponent />)
+    const listItem = mount(<List />)
       .find('ListItem')
       .first();
     const { id, title, date, signups, comments } =
@@ -51,7 +51,7 @@ describe('Test modal rendering', () => {
     expect(wrapper.find(Modal).prop('isOpen')).toBe(true);
   });
   it('should close when close button is clicked', async () => {
-    const listItem = mount(<ListComponent />)
+    const listItem = mount(<List />)
       .find('ListItem')
       .first();
     const { id, title, date, signups, comments } =
@@ -66,9 +66,7 @@ describe('Test modal rendering', () => {
       />
     );
 
-    expect(wrapper.find(Modal).prop('isOpen')).toBe(false);
     wrapper.find('p').first().simulate('click');
-    expect(wrapper.find(Modal).prop('isOpen')).toBe(true);
     wrapper.find('button').first().simulate('click');
     expect(wrapper.find(Modal).prop('isOpen')).toBe(false);
   });
